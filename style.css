@@ -1,0 +1,89 @@
+body {
+    background-color: #165cac;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 200;
+}
+
+
+
+#scoreboard {
+    height: 150px;
+    width: 418px;
+    background-color: #00b7ff;
+    border: 1px solid lightgrey;
+    margin-left: calc(50% - 210px);
+}
+
+#game-container {
+    height: 420px;
+    width: 420px;
+    background-color: rgb(233, 233, 233);
+    margin-left: calc(50% - 210px);
+
+}
+
+.row {
+    display:flex;
+    flex-direction: row;
+}
+
+/* Tic-tac-toe grid lines*/
+.box1 {
+    border-right: 1px solid blue;
+    border-bottom: 1px solid blue;
+}
+
+.box2 {
+    border-left: 1px solid blue;
+    border-bottom: 1px solid blue;
+    border-right: 1px solid blue;
+}
+
+.box3 {
+    border-left: 1px solid blue;
+    border-bottom: 1px solid blue;
+}
+
+.box4 {
+    border-right: 1px solid blue;
+    border-bottom: 1px solid blue;
+    border-top: 1px solid blue;
+}
+.box5 {
+    border-top: 1px solid blue;
+    border-right: 1px solid blue;
+    border-bottom: 1px solid blue;
+    border-left: 1px solid blue;
+}
+.box6 {
+    border-left: 1px solid blue;
+    border-bottom: 1px solid blue;
+    border-top: 1px solid blue;
+}
+.box7 {
+    border-right: 1px solid blue;
+    border-top: 1px solid blue;
+}
+.box8 {
+    border-right: 1px solid blue;
+    border-top: 1px solid blue;
+    border-left: 1px solid blue;
+}
+.box9 {
+    border-left: 1px solid blue;
+    border-top: 1px solid blue;
+}
+
+/* Defines size of squares*/
+.square-space {
+    height: 140px;
+    width: 140px;
+}
+
+.square-space:hover {
+    background-color: lightpink;
+}
