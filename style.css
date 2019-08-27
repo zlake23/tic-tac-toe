@@ -1,6 +1,20 @@
 body {
     background-color: #165cac;
 }
+button {
+    width: 100px;
+    height: 20px;
+    border-radius: 10px;
+    margin-top: 3px;
+    background-color: #484848;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.checkBox {
+    cursor: pointer;
+}
 
 h3 {
     text-align: center;
@@ -9,7 +23,7 @@ h3 {
     color: white;
 }
 
-.welcome-players {
+.controls {
     color: white;
     display: flex;
     flex-direction: column;
