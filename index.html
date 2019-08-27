@@ -8,19 +8,24 @@
 
     <body>
         <head>
-                <h3>Let's Play Tic-Tac-Toe!</h3>
+                <h3>Tic-Tac-Toe</h3>
         </head>
 
         <div id="scoreboard">
-            
-            <div class="welcome-players">
-                <div class="player" id="p1">Player 1:</div>
-                <div class="player" id="p2">Player 2:</div>
-                <div class="winner-display" id="winner">Player 1 wins!</div> 
-                <button id="start">Start Game</button> <button id="clear">Clear Game</button>
+            <div class="controls">
+                <h2>Try to Beat the Computer!</h2>
+                <form action='#'>
+                    <input class="checkBox" id="x-value" type="checkbox" name="xToken" value="X">Play as X
+                    <input class="checkBox" id="o-value" type="checkbox" name="oToken" value="O">Play as O
+                </form>
+                <button id="clear">Clear Game</button>
+                <div class="winner-display" id="winner"></div> 
             </div>
         </div>
+
         <div id="game-container">
+            <div class="token" id="playerOneToken"></div>
+            <div class="token" id="playerTwoToken"></div>
 
             <div class="gameboard">
                 <div class="row">
