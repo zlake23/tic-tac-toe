@@ -4,13 +4,22 @@ body {
 
 h3 {
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 200;
     color: white;
 }
 
-h4 {
+.welcome-players {
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player {
+    margin-top: 2px;
+    font-size: 20px;
 }
 
 #scoreboard {

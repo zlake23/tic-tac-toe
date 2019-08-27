@@ -7,15 +7,19 @@
 
 
     <body>
-        
-        <div id="scoreboard">
-            <h3>Let's Play!</h3>
-            <h4>Player 1: X</h2>
-            <h4>Player 2: O</h2>
+        <head>
+                <h3>Let's Play Tic-Tac-Toe!</h3>
+        </head>
 
+        <div id="scoreboard">
+            
+            <div class="welcome-players">
+                <div class="player" id="p1">Player 1:</div>
+                <div class="player" id="p2">Player 2:</div>
+                <div class="winner-display" id="win">Player 1 wins!</div> 
+            </div>
         </div>
         <div id="game-container">
-            
 
             <div class="gameboard">
                 <div class="row">
@@ -37,6 +41,6 @@
 
         </div>
 
-        <script type="text/javascript" src="app.js"></script>
+        <script src="app.js"></script>
     </body>
 </html>
