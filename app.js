@@ -1,6 +1,7 @@
 let playerOne = document.getElementById("p1");
 let playerTwo = document.getElementById("p2");
-const startGame = document.getElementById("start");
+const token_p1 = document.getElementById("playerOneToken");
+const token_p2 = document.getElementById("playerTwoToken");
 const clearGame = document.getElementById("clear");
 let winnerUpdate = document.getElementById("winner");
 const squareOne = document.getElementById("box1");
@@ -14,17 +15,17 @@ const squareEight = document.getElementById("box8");
 const squareNine = document.getElementById("box9");
 
 
-function markSquare() {
-    console.log("you clicked a box");
+function playerTurn() {
+    
 }
 
-function newGame() {
-    playerOne.innerHTML = "Player 1: Your Turn!";
+function markSquare(X, O) {
+
 }
 
 function resetGame() {
-    playerOne.innerHTML = "Player 1:";
-    playerTwo.innerHTML = "Player 2:";
+    playerOne.innerHTML = "";
+    playerTwo.innerHTML = "";
     squareOne.innerHTML = "";
     squareTwo.innerHTML = "";
     squareThree.innerHTML = "";
@@ -64,9 +65,6 @@ function playGame() {
     });
     squareNine.addEventListener('click', function() {
         markSquare();
-    });
-    startGame.addEventListener('click', function() {
-        newGame();
     });
     clearGame.addEventListener('click', function() {
         resetGame();
