@@ -1,5 +1,3 @@
-let playerOne = document.getElementById("p1");
-let playerTwo = document.getElementById("p2");
 const token_p1 = document.getElementById("playerOneToken");
 const token_p2 = document.getElementById("playerTwoToken");
 const clearGame = document.getElementById("clear");
@@ -13,11 +11,6 @@ const squareSix = document.getElementById("box6");
 const squareSeven = document.getElementById("box7");
 const squareEight = document.getElementById("box8");
 const squareNine = document.getElementById("box9");
-
-
-function playerTurn() {
-    
-}
 
 function markSquare(X, O) {
 
