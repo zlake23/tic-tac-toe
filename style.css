@@ -12,9 +12,6 @@ button {
     margin-top: 10px;
 }
 
-.checkBox {
-    cursor: pointer;
-}
 
 h3 {
     text-align: center;
@@ -23,53 +20,51 @@ h3 {
     color: white;
 }
 
-.controls {
+#scoreboard {
+    height: 150px;
+    width: 320px;
+    background-color: #00b7ff;
+    
+    margin-left: calc(50% - 210px);
     color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin: auto;
     align-items: center;
 }
 
-.player {
-    margin-top: 2px;
-    font-size: 20px;
-}
-
-#scoreboard {
-    height: 150px;
-    width: 418px;
-    background-color: #00b7ff;
-    border: 1px solid darkgrey;
-    margin-left: calc(50% - 210px);
-}
-
 #game-container {
-    height: 420px;
-    width: 420px;
+    height: 320px;
+    width: 320px;
     background-color: rgb(233, 233, 233);
-    margin-left: calc(50% - 210px);
+    margin: auto;
     cursor: pointer;
 
 }
 
-.row {
-    display:flex;
-    flex-direction: row;
-}
-
-.counter {
-    height: 75px;
-    width: 138px;
-}
-
 /* Defines size of squares*/
 .square-space {
-    height: 138px;
-    width: 138px;
-    border: 1px solid darkgrey;
+    height: 100px;
+    width: 100px;
+    float: left;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 100px;
 }
 
 .square-space:hover {
     background-color: lightpink;
+}
+
+#box0, #box1, #box2, #box3, #box4, #box5 {
+    border-bottom: 10px solid darkblue;
+}
+
+#box2, #box5, #box8, #box1, #box4, #box7 {
+    border-left: 10px solid darkblue;
+}
+
+.winner {
+    color: green;
 }
