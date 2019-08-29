@@ -15,18 +15,39 @@ const emptySquares = () => grid().filter(squareEl => squareEl.innerText === '');
 const allSame = (arr) => arr.every(squareEl => squareEl.innerText === arr[0].innerText && squareEl.innerText !== '');
 
 const takeTurn = (index, letter) => grid()[index].innerText = letter;
-const opponentChoice = () => 0;
+const opponentChoice = () => boxNumId(emptySquares()[Math.floor(Math.random() * emptySquares().length)]);
+
+const endGame = (winningSequence) => { 
+    winningSequence.forEach(squareEl => squareEl.classList.add('winner'));
+    disableListeners();
+};
+const checkForVictory = () => {
+    let victory = false;
+
+    winningCombos.forEach(c => {
+        const _grid = grid();
+        const sequence = [_grid[c[0]], _grid[c[1]], _grid[c[2]]];
+        if(allSame(sequence)) {
+            victory = true;
+            endGame(sequence);
+        }
+    });
+
+    return victory;
+}
 
 const opponentTurn = () => {
     disableListeners();
     setTimeout(() => {
         takeTurn(opponentChoice(), 'o');
+        if(!checkForVictory());
         enableListeners();
     }, 1500);
 }
 
 const clickFunct = (event) => {
     takeTurn(boxNumId(event.target), 'x');
+    if(!checkForVictory())
     opponentTurn();
 };
 
