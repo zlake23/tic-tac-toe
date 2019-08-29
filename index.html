@@ -7,44 +7,30 @@
 
 
     <body>
-        <head>
-                <h3>Tic-Tac-Toe</h3>
-        </head>
-
-        <div id="scoreboard">
-            <div class="controls">
-                <h2>Try to Beat the Computer!</h2>
-                <form action='#'>
-                    <input class="checkBox" id="x-value" type="checkbox" name="xToken" value="X">Play as X
-                    <input class="checkBox" id="o-value" type="checkbox" name="oToken" value="O">Play as O
-                </form>
-                <button id="clear">Clear Game</button>
+        <h3>Try to Beat the Computer!</h3>
+        
+            <div id="scoreboard">
                 <div class="winner-display" id="winner"></div> 
+                <button id="clear">Clear Game</button>
             </div>
-        </div>
 
+        
         <div id="game-container">
-            <div class="token" id="playerOneToken"></div>
-            <div class="token" id="playerTwoToken"></div>
-
-            <div class="gameboard">
-                <div class="row">
-                    <div class="square-space" id="box1"></div>
-                    <div class="square-space" id="box2"></div>
-                    <div class="square-space" id="box3"></div>
-                </div>
-                <div class="row">
-                    <div class="square-space" id="box4"></div>
-                    <div class="square-space" id="box5"></div>
-                    <div class="square-space" id="box6"></div>
-                    </div>
-                <div class="row">
-                    <div class="square-space" id="box7"></div>
-                    <div class="square-space" id="box8"></div>
-                    <div class="square-space" id="box9"></div>
-                </div>
+            <div class="row">
+                <div class="square-space" id="box0"></div>
+                <div class="square-space" id="box1"></div>
+                <div class="square-space" id="box2"></div>
             </div>
-
+            <div class="row">
+                <div class="square-space" id="box3"></div>
+                <div class="square-space" id="box4"></div>
+                <div class="square-space" id="box5"></div>
+            </div>
+            <div class="row">
+                <div class="square-space" id="box6"></div>
+                <div class="square-space" id="box7"></div>
+                <div class="square-space" id="box8"></div>
+            </div>
         </div>
 
         <script src="app.js"></script>
