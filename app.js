@@ -10,7 +10,7 @@ const winningCombos = [
 ];
 
 const grid = () => Array.from(document.getElementsByClassName('square-space'));
-const boxNumId = (squareEl) => Number.parseInt(squareEl.id.replace('q', ''));
+const boxNumId = (squareEl) => Number.parseInt(squareEl.id.replace('box', ''));
 const emptySquares = () => grid().filter(squareEl => squareEl.innerText === '');
 const allSame = (arr) => arr.every(squareEl => squareEl.innerText === arr[0].innerText && squareEl.innerText !== '');
 
