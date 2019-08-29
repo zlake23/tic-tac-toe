@@ -1,67 +1,36 @@
-const token_p1 = document.getElementById("playerOneToken");
-const token_p2 = document.getElementById("playerTwoToken");
-const clearGame = document.getElementById("clear");
-let winnerUpdate = document.getElementById("winner");
-const squareOne = document.getElementById("box1");
-const squareTwo = document.getElementById("box2");
-const squareThree = document.getElementById("box3");
-const squareFour = document.getElementById("box4");
-const squareFive = document.getElementById("box5");
-const squareSix = document.getElementById("box6");
-const squareSeven = document.getElementById("box7");
-const squareEight = document.getElementById("box8");
-const squareNine = document.getElementById("box9");
+const winningCombos = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+];
 
-function markSquare(X, O) {
+const grid = () => Array.from(document.getElementsByClassName('square-space'));
+const boxNumId = (squareEl) => Number.parseInt(squareEl.id.replace('q', ''));
+const emptySquares = () => grid().filter(squareEl => squareEl.innerText === '');
+const allSame = (arr) => arr.every(squareEl => squareEl.innerText === arr[0].innerText && squareEl.innerText !== '');
 
+const takeTurn = (index, letter) => grid()[index].innerText = letter;
+const opponentChoice = () => 0;
+
+const opponentTurn = () => {
+    disableListeners();
+    setTimeout(() => {
+        takeTurn(opponentChoice(), 'o');
+        enableListeners();
+    }, 1500);
 }
 
-function resetGame() {
-    playerOne.innerHTML = "";
-    playerTwo.innerHTML = "";
-    squareOne.innerHTML = "";
-    squareTwo.innerHTML = "";
-    squareThree.innerHTML = "";
-    squareFour.innerHTML = "";
-    squareFive.innerHTML = "";
-    squareSix.innerHTML = "";
-    squareSeven.innerHTML = "";
-    squareEight.innerHTML = "";
-    squareNine.innerHTML = "";
-    winnerUpdate.innerHTML = "";
-}
+const clickFunct = (event) => {
+    takeTurn(boxNumId(event.target), 'x');
+    opponentTurn();
+};
 
-function playGame() {
-    squareOne.addEventListener('click', function() {
-        markSquare();
-    });
-    squareTwo.addEventListener('click', function() {
-        markSquare();
-    });
-    squareThree.addEventListener('click', function() {
-        markSquare();
-    });
-    squareFour.addEventListener('click', function() {
-        markSquare();
-    });
-    squareFive.addEventListener('click', function() {
-        markSquare();
-    });
-    squareSix.addEventListener('click', function() {
-        markSquare();
-    });
-    squareSeven.addEventListener('click', function() {
-        markSquare();
-    });
-    squareEight.addEventListener('click', function() {
-        markSquare();
-    });
-    squareNine.addEventListener('click', function() {
-        markSquare();
-    });
-    clearGame.addEventListener('click', function() {
-        resetGame();
-    })
-}
+const enableListeners = () => grid().forEach(squareEl => squareEl.addEventListener('click', clickFunct));
+const disableListeners = () => grid().forEach(squareEl => squareEl.removeEventListener('click', clickFunct));
 
-playGame();
+enableListeners();
