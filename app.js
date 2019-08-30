@@ -9,7 +9,6 @@ const winningCombos = [
     [2, 4, 6]
 ];
 
-const clearGame = document.getElementById('clear');
 const winningPlayer = document.getElementById('whoWon');
 
 const grid = () => Array.from(document.getElementsByClassName('square-space'));
@@ -18,12 +17,13 @@ const emptySquares = () => grid().filter(squareEl => squareEl.innerText === '');
 const allSame = (arr) => arr.every(squareEl => squareEl.innerText === arr[0].innerText && squareEl.innerText !== '');
 
 const takeTurn = (index, letter) => grid()[index].innerText = letter;
+
+//need to update to make AI choice smarter
 const opponentChoice = () => boxNumId(emptySquares()[Math.floor(Math.random() * emptySquares().length)]);
 
 const endGame = (winningSequence) => { 
     winningSequence.forEach(squareEl => squareEl.classList.add('winner'));
     disableListeners();
-    winningPlayer.innerHTML = "";
 };
 const checkForVictory = () => {
     let victory = false;
@@ -46,7 +46,7 @@ const opponentTurn = () => {
         takeTurn(opponentChoice(), 'o');
         if(!checkForVictory());
         enableListeners();
-    }, 1500);
+    }, 1000);
 }
 
 const clickFunct = (event) => {
@@ -59,12 +59,3 @@ const enableListeners = () => grid().forEach(squareEl => squareEl.addEventListen
 const disableListeners = () => grid().forEach(squareEl => squareEl.removeEventListener('click', clickFunct));
 
 enableListeners();
-
-const newGame = () => {
-   enableListeners();
-
-}
-
-clearGame.addEventListener('click', function() {
-    newGame();
-});
