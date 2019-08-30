@@ -9,6 +9,9 @@ const winningCombos = [
     [2, 4, 6]
 ];
 
+const clearGame = document.getElementById('clear');
+const winningPlayer = document.getElementById('whoWon');
+
 const grid = () => Array.from(document.getElementsByClassName('square-space'));
 const boxNumId = (squareEl) => Number.parseInt(squareEl.id.replace('box', ''));
 const emptySquares = () => grid().filter(squareEl => squareEl.innerText === '');
@@ -20,13 +23,14 @@ const opponentChoice = () => boxNumId(emptySquares()[Math.floor(Math.random() * 
 const endGame = (winningSequence) => { 
     winningSequence.forEach(squareEl => squareEl.classList.add('winner'));
     disableListeners();
+    winningPlayer.innerHTML = "";
 };
 const checkForVictory = () => {
     let victory = false;
 
-    winningCombos.forEach(c => {
+    winningCombos.forEach(combo => {
         const _grid = grid();
-        const sequence = [_grid[c[0]], _grid[c[1]], _grid[c[2]]];
+        const sequence = [_grid[combo[0]], _grid[combo[1]], _grid[combo[2]]];
         if(allSame(sequence)) {
             victory = true;
             endGame(sequence);
@@ -55,3 +59,12 @@ const enableListeners = () => grid().forEach(squareEl => squareEl.addEventListen
 const disableListeners = () => grid().forEach(squareEl => squareEl.removeEventListener('click', clickFunct));
 
 enableListeners();
+
+const newGame = () => {
+   enableListeners();
+
+}
+
+clearGame.addEventListener('click', function() {
+    newGame();
+});
